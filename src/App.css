@@ -10,6 +10,12 @@
         visibility: visible !important;
     } */
 
+    /*
+    bg      -> bg-sky-200 dark:bg-sky-800
+    color   -> text-emerald-800 dark:text-emerald-300
+    accent  -> bg-orange-500
+    */
+
     h1 {
         @apply text-4xl font-bold
     }
