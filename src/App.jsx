@@ -1,33 +1,40 @@
 import { useState, useEffect } from 'react'
+import { Outlet } from 'react-router-dom'
 
-export default function App() {
+import Header from './components/Header'
 
-  const [darkMode, setDarkMode] = useState(JSON.parse(localStorage.getItem('darkMode')) ?? window.matchMedia('(prefers-color-scheme: dark)').matches)
+const App = () => {
 
-  function handleDarkMode() {
-    setDarkMode(prev => {
-      localStorage.setItem('darkMode', !prev)
-      return !prev
-    })
-  }
+    const [darkMode, setDarkMode] = useState(JSON.parse(localStorage.getItem('darkMode')) ?? window.matchMedia('(prefers-color-scheme: dark)').matches)
 
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
+    function handleDarkMode() {
+        setDarkMode(prev => {
+            localStorage.setItem('darkMode', !prev)
+            return !prev
+        })
     }
-  }, [darkMode])
 
-  return (
-    <div className='flex gap-5 flex-col'>
-      <h1>Heading 1</h1>
-      <h2>Heading 2</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio id earum, consectetur excepturi provident qui commodi natus nisi dignissimos. Illo earum est culpa iure facere error, laborum id eius voluptatibus.</p>
-      <div className="w-11 h-5 bg-orange-500 "></div>
-      <div>
-        <button className='mt-5 p-2 border-2 border-slate-800' onClick={handleDarkMode}>Toggle Mode</button>
-      </div>
-    </div>
-  )
+    useEffect(() => {
+        if (darkMode) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    }, [darkMode])
+
+    return (
+        <div className='mx-auto max-w-screen-2xl p-1' id='x--page-body-content'>
+            {/* <div className="w-11 h-5 bg-orange-500 "></div> */}
+            <Header />
+            <div className='absolute top-0 right-1/2'>
+                <button
+                    className='p-2 border-1 border-slate-600 text-xs'
+                    onClick={handleDarkMode}
+                >Toggle Mode</button>
+            </div>
+            <Outlet />
+        </div>
+    )
 }
+
+export default App

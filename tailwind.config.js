@@ -5,7 +5,14 @@ export default {
     "./src/**/*.{html,jsx}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        inter: [ 'Inter', 'sans-serif' ]
+      },
+      borderWidth: {
+        '1': "1px"
+      }
+    },
   },
   plugins: [],
   darkMode: 'selector'

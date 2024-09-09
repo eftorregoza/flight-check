@@ -11,18 +11,84 @@
     } */
 
     /*
-    bg      -> bg-sky-200 dark:bg-sky-800
-    color   -> text-emerald-800 dark:text-emerald-300
+    bg      -> bg-sky-50 dark:bg-sky-950
+    color   -> text-indigo-800 dark:text-emerald-100
     accent  -> bg-orange-500
     */
-
     h1 {
-        @apply text-4xl font-bold
+        @apply text-2xl lg:text-4xl font-bold leading-tight;
     }
+
     h2 {
-        @apply text-2xl
+        @apply text-xl lg:text-3xl font-semibold leading-snug;
     }
+
+    h3 {
+        @apply text-lg lg:text-2xl font-semibold leading-normal;
+    }
+
+    h4 {
+        @apply text-base lg:text-xl font-medium leading-relaxed;
+    }
+
+    h5 {
+        @apply text-sm lg:text-lg font-medium leading-loose;
+    }
+
     p {
-        @apply text-base
+        @apply text-xs lg:text-base leading-relaxed text-stone-700 dark:text-stone-300;
+    }
+
+    input[type="text"] {
+        @apply rounded-lg py-3 px-6 outline-none w-full font-semibold uppercase ring-2 ring-offset-1 ring-transparent focus:ring-gray-400 border-2 border-zinc-300 bg-slate-100 focus:bg-slate-50 text-slate-600 transition-colors
+    }
+
+    .x--button {
+        @apply rounded-md cursor-pointer py-2 px-4 shadow-md border-2 border-slate-500 bg-slate-500 text-slate-200 shadow-slate-500/50 hover:bg-slate-700 hover:border-slate-700 transition-colors
+    }
+
+    .x--button.x--button-primary {
+        @apply bg-emerald-600 border-emerald-600 hover:bg-emerald-700 hover:border-emerald-700 shadow-emerald-900 font-bold text-lg
+    }
+
+    /* bg-[url('/images/airplanes-pic-3.jpg')] */
+    #x--section-search-heading {
+        @apply  bg-cover bg-top min-h-56 bg-fixed p-2 flex justify-center items-center;
+        background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.25)), url('/images/airplanes-pic-3.jpg')
+    }
+
+    .x--section {
+        @apply py-2 px-3 sm:px-16 md:px-24 lg:px-32
+    }
+
+    .x--section-container {
+        @apply border-0 border-slate-600 p-2
+    }
+
+    .x--form-flight-search {
+        @apply border-0 border-green-600 flex flex-col gap-2
+    }
+
+
+    .x--form-flight-search .x--question {
+        @apply flex flex-col gap-1
+    }
+
+    .x--form-flight-search .x--question.x--inline {
+        @apply flex-row gap-3 justify-center
+    }
+    .x--form-flight-search .x--question.x--inline > :nth-child(1) {
+        @apply flex mb-[22px] lg:mb-[32px] items-center justify-center md:justify-end w-[60%] sm:w-fit
+    }
+
+    .x--form-flight-search .x--question-input {
+        /* @apply  */
+    }
+
+    .x--form-flight-search .x--question-help {
+        @apply mt-0.5 lg:mt-1.5
+    }
+    .x--form-flight-search .x--question-help p {
+        @apply text-[0.65rem] md:text-xs lg:text-sm italic
     }
 }
