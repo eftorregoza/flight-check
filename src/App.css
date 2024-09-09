@@ -81,9 +81,9 @@
         @apply flex mb-[22px] lg:mb-[32px] items-center justify-center md:justify-end w-[60%] sm:w-fit
     }
 
-    .x--form-flight-search .x--question-input {
-        /* @apply  */
-    }
+    /* .x--form-flight-search .x--question-input {
+        @apply
+    } */
 
     .x--form-flight-search .x--question-help {
         @apply mt-0.5 lg:mt-1.5
